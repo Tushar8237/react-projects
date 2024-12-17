@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 function Weather() {
-  const API_KEY = "020367ce52fb6d0575cdc9f32ccd6923"; // Replace with your API key
+  const API_KEY = import.meta.env.VITE_API_KEY; // Replace with your API key
   const [city, setCity] = useState(""); // User input for city
   const [weatherData, setWeatherData] = useState(null); // Weather data
   const [error, setError] = useState(null); // Error handling
