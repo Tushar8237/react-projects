@@ -24,6 +24,61 @@ a:hover {
 
 body {
   margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.app {
+  min-height: 100vh; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.app.light {
+  background-color: #ffffff;
+  color: #333333;
+}
+
+.app.dark {
+  background-color: #333333;
+  color: #ffffff;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
+  padding: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #5c67f2;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #4a54d1;
+}
+
+.content {
+  padding: 20px;
+  text-align: center;
+}
+
+
+
+/* body {
+  margin: 0;
   display: flex;
   place-items: center;
   min-width: 320px;
@@ -65,4 +120,4 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
-}
+} */
