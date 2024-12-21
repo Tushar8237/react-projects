@@ -1,0 +1,38 @@
+.board {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 2px;
+    width: 400px;
+    height: 400px;
+    margin: 20px auto;
+    border: 2px solid #333;
+  }
+  
+  .cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #aaa;
+    position: relative;
+    font-size: 12px;
+  }
+  
+  .snake {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    font-size: 14px;
+  }
+  
+  .ladder {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    font-size: 14px;
+  }
+  
+  .player {
+    font-size: 18px;
+    color: blue;
+}
+  
