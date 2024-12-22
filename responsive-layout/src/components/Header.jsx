@@ -1,4 +1,5 @@
 import React from 'react'
+import './AllComponent.css'
 
 function Header() {
   return (

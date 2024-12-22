@@ -1,4 +1,6 @@
 import React from 'react'
+import './AllComponent.css'
+
 
 function Footer() {
   return (
