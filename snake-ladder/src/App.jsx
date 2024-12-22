@@ -1,34 +1,43 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import PlayerInfo from './components/PlayerInfo'
+import DiceRoll from './components/DiceRoll'
+import Board from './components/Board'
+import { SNAKES, LADDERS, BOARD_SIZE } from './constant/gameRules';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [position , setPosition] = useState({1 : 1, 2 : 1});
+  const [currentPlayer , setCurrentPlayer] = useState(1);
 
+  const rollDice = () => {
+    const diceRoll = Math.floor(Math.random() * 6) + 1;
+    const newPosition = position[currentPlayer] + diceRoll;
+
+    let finalPosition = newPosition;
+    if (SNAKES[newPosition]) {
+      finalPosition = SNAKES[newPosition];
+    } else if (LADDERS[newPosition]) {
+      finalPosition = LADDERS[newPosition];
+    }
+
+    if (finalPosition <= BOARD_SIZE) {
+      setPosition({
+        ...position,
+        [currentPlayer]: finalPosition
+      });
+    }
+
+    setCurrentPlayer(currentPlayer === 1 ? 2 : 1);
+  }
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div className='app'>
+      <h1>
+        Snake and Ladder Game
+      </h1>
+      <PlayerInfo currentPlayer={currentPlayer}/>
+      <DiceRoll onRoll={rollDice}/>
+      <Board siz={BOARD_SIZE} snakes={SNAKES} ladders={LADDERS} position={position}/>
+    </div>
   )
 }
 
