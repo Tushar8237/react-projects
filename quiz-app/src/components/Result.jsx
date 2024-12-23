@@ -1,11 +1,15 @@
-import React from 'react'
+import React from "react";
 
-function Result() {
+function Result({ score, total }) {
   return (
     <div>
-      Result
+      <h2>Quiz Complete</h2>
+      <p>
+        Your score: {score}/{total}
+      </p>
+      <p>{score === total ? "Perfect!" : "Keep Practicing!"}</p>
     </div>
-  )
+  );
 }
 
-export default Result
+export default Result;
