@@ -4,6 +4,7 @@ import Quiz from "./components/Quiz";
 import QuizForm from "./components/QuizForm";
 import Result from "./components/Result";
 import ProgressBar from "./components/ProgressBar";
+import PasswordGenerator from "./components/password-generator/PasswordGenerator";
 
 function App() {
   const [quizData, setQuizData] = useState([]);
@@ -40,7 +41,6 @@ function App() {
       ) : (
         <Quiz quizData={quizData} finishQuiz={finishQuiz}/>
       )}
-
       <div>
         <h1>
           Progress Bar
@@ -50,6 +50,13 @@ function App() {
           <button onClick={incrementProgress}>Increment</button>
           <button onClick={resetProgressBar}>Reset</button>
         </div>
+      </div>
+
+      <div>
+        <h1>
+          Password Generator
+        </h1>
+        <PasswordGenerator />
       </div>
     </div>
   );
