@@ -5,6 +5,7 @@ import QuizForm from "./components/QuizForm";
 import Result from "./components/Result";
 import ProgressBar from "./components/ProgressBar";
 import PasswordGenerator from "./components/password-generator/PasswordGenerator";
+import SearchComponent from "./components/search-component/SearchComponent";
 
 function App() {
   const [quizData, setQuizData] = useState([]);
@@ -57,6 +58,9 @@ function App() {
           Password Generator
         </h1>
         <PasswordGenerator />
+      </div>
+      <div>
+        <SearchComponent />
       </div>
     </div>
   );
